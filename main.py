@@ -13,14 +13,13 @@ bedrock = boto3.client(service_name="bedrock-runtime")
 
 payload = {
     "prompt": "[INST]"+prompt+"[/INST]",
-    "max_gen_length": 512,
     "temperature": 0.3,
     "top_p": 0.9
 }
 
 body = json.dumps(payload)
 
-model_id = "meta.llama2-70b0-chat-v1"
+model_id = "meta.llama2-70b-chat-v1"
 
 response = bedrock.invoke_model(
     body=body,
